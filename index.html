@@ -33,7 +33,6 @@
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        /* ------- 1. الشريط العلوي ------- */
         .top-header {
             display: flex; justify-content: space-between; align-items: center;
             padding: 15px 20px; background: linear-gradient(180deg, rgba(212,175,55,0.15) 0%, transparent 100%);
@@ -42,7 +41,6 @@
         .header-title { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--gold); }
         .user-avatar { width: 35px; height: 35px; border-radius: 50%; border: 1px solid var(--gold); background: #0a192f; display: flex; justify-content: center; align-items: center; }
 
-        /* ------- 2. القائمة الرئيسية ------- */
         .content-area { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; z-index: 10; }
 
         .menu-card {
@@ -55,7 +53,6 @@
         .menu-text h3 { margin: 0; font-size: 14px; color: var(--gold-light); font-family: 'Orbitron'; }
         .menu-text p { margin: 3px 0 0 0; font-size: 11px; color: #88a0b8; }
 
-        /* ------- 3. شريط التنقل السفلي ------- */
         .bottom-nav {
             display: flex; justify-content: space-around; align-items: center;
             background: linear-gradient(0deg, rgba(212,175,55,0.2) 0%, rgba(3,7,18,0.9) 100%);
@@ -65,14 +62,9 @@
         .nav-item.active { color: var(--gold); }
         .nav-icon { font-size: 20px; margin-bottom: 4px; }
 
-        /* ------- 4. الشاشات المنبثقة (Overlays) ------- */
-        .screen-overlay { 
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; 
-            background: var(--dark-bg); z-index: 100; display: none; flex-direction: column; 
-        }
+        .screen-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: var(--dark-bg); z-index: 100; display: none; flex-direction: column; }
         .close-btn { position: absolute; top: 20px; left: 20px; z-index: 50; background: var(--gold); color: #000; border: none; padding: 8px 15px; border-radius: 8px; font-weight: bold; cursor: pointer; }
 
-        /* --- شاشة التوأم الرقمي 3D --- */
         #webgl-container { width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1; cursor: grab; }
         #webgl-container:active { cursor: grabbing; }
         .holo-frame { position: absolute; top: 12%; left: 10%; width: 80%; height: 65%; border: 2px solid rgba(212, 175, 55, 0.4); border-radius: 20px; z-index: 2; pointer-events: none; box-shadow: 0 0 30px rgba(212, 175, 55, 0.1) inset; }
@@ -85,7 +77,6 @@
         .ecg-line { width: 100%; height: 100%; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0,15 L10,15 L15,5 L20,25 L25,15 L100,15" stroke="%23d4af37" stroke-width="1.5" fill="none" /></svg>'); background-size: 200px 100%; background-repeat: repeat-x; animation: ecgMove 2s linear infinite; }
         @keyframes ecgMove { 0% { background-position: 0 0; } 100% { background-position: -200px 0; } }
 
-        /* --- شاشة جدول الأدوية --- */
         #meds-screen { z-index: 150; padding: 20px; overflow-y: auto; }
         .add-med-form { background: rgba(0, 216, 255, 0.05); border: 1px solid rgba(0, 216, 255, 0.3); padding: 15px; border-radius: 10px; margin-bottom: 20px; text-align: right; }
         .input-group { margin-bottom: 10px; }
@@ -93,12 +84,10 @@
         .input-group input { width: 100%; padding: 8px; border-radius: 5px; border: 1px solid var(--gold); background: rgba(0,0,0,0.5); color: #fff; box-sizing: border-box; font-family: 'Cairo'; }
         .gold-btn { background: var(--gold); color: #000; border: none; border-radius: 8px; padding: 12px; font-weight: bold; width: 100%; cursor: pointer; font-family: 'Cairo'; }
 
-        /* --- شاشة قاعدة الحديد --- */
         #iron-rule-screen { z-index: 200; background: rgba(3, 7, 18, 0.98); justify-content: center; align-items: center; padding: 20px; }
         .iron-card { background: var(--glass-bg); border: 3px solid var(--red-alert); border-radius: 20px; padding: 30px 20px; text-align: center; width: 100%; max-width: 350px; box-shadow: 0 0 50px rgba(255, 51, 51, 0.3); animation: pulseRed 2s infinite; }
         @keyframes pulseRed { 0% { box-shadow: 0 0 20px rgba(255, 51, 51, 0.3); } 50% { box-shadow: 0 0 60px rgba(255, 51, 51, 0.6); } 100% { box-shadow: 0 0 20px rgba(255, 51, 51, 0.3); } }
 
-        /* --- شاشة النبض الصدري --- */
         #chest-screen { z-index: 150; align-items: center; justify-content: center; background: radial-gradient(circle at center, #0a192f 0%, #030712 100%); }
         .chest-instruction { text-align: center; color: var(--gold); font-size: 14px; margin-bottom: 30px; padding: 0 20px; line-height: 1.6; }
         .pulse-circle { width: 150px; height: 150px; border-radius: 50%; background: rgba(212, 175, 55, 0.1); border: 2px solid var(--gold); display: flex; justify-content: center; align-items: center; margin-bottom: 30px; box-shadow: 0 0 30px rgba(212, 175, 55, 0.2); transition: 0.1s; }
@@ -163,7 +152,6 @@
         </div>
     </div>
 
-    <!-- 1. شاشة التوأم الرقمي -->
     <div class="screen-overlay" id="holo-screen">
         <button class="close-btn" onclick="closeHoloScreen()">✖ Close</button>
         <div class="holo-frame"></div>
@@ -173,7 +161,6 @@
         <div id="webgl-container"></div>
     </div>
 
-    <!-- 2. شاشة الأدوية -->
     <div class="screen-overlay" id="meds-screen">
         <button class="close-btn" onclick="closeMedsScreen()">✖ Close</button>
         <h2 style="color: var(--gold); text-align: center; margin-top: 20px;">Medication Protocol</h2>
@@ -185,7 +172,6 @@
         <div id="meds-list" style="padding: 0 20px;"></div>
     </div>
 
-    <!-- 3. شاشة النبض الصدري -->
     <div class="screen-overlay" id="chest-screen">
         <button class="close-btn" onclick="closeChestVitals()">✖ Close</button>
         <h2 style="color: var(--gold); font-family: 'Orbitron'; margin-bottom: 10px;">CHEST VITALS</h2>
@@ -202,7 +188,6 @@
         <button class="start-btn" id="start-btn" onclick="startChestSensor()">بدء استشعار النبض</button>
     </div>
 
-    <!-- 4. شاشة قاعدة الحديد -->
     <div class="screen-overlay" id="iron-rule-screen">
         <div class="iron-card">
             <div style="font-size: 40px; margin-bottom: 10px;">🚨</div>
@@ -214,10 +199,8 @@
     </div>
 
     <script>
-        // ==================== 1. كود الماسح الذكي (Gemini AI) ====================
-        
-        // تم وضع المفتاح القديم هنا (للتجربة فقط)
-        const API_KEY = "AQ.Ab8RN6KqndQjZBzqOpFIdt1icHfLT1IQ07NFsIhkqTLKA3Fh4Q"; 
+        // ⚠️ ضع مفتاح API الجديد هنا (الذي ينتهي بـ Fh4Q) ⚠️
+        const API_KEY = "ضع_المفتاح_الجديد_هنا"; 
         
         async function analyzeImage(file) {
             const reader = new FileReader();
@@ -227,7 +210,6 @@
                     const promptText = `أنت العقل المدبر لبروتوكول MRS. حلل هذه الصورة الطبية بدقة. رد بالعربية بأسلوب بشري مطمئن وقصير.`;
                     const payload = { contents: [{ parts: [{ text: promptText }, { inline_data: { mime_type: file.type, data: base64String } }] }] };
                     try {
-                        // تم تعديل اسم الموديل ليكون gemini-1.5-flash
                         const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
                         const data = await res.json();
                         if(data.candidates && data.candidates[0].content) resolve(data.candidates[0].content.parts[0].text);
@@ -238,6 +220,20 @@
             });
         }
 
+        // دالة قراءة النص بصوت مسموع
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // إيقاف أي قراءة سابقة
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ar-SA'; // اللغة العربية
+                utterance.rate = 0.9; // سرعة القراءة
+                utterance.pitch = 1; // نبرة الصوت
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("متصفحك لا يدعم خاصية القراءة الصوتية.");
+            }
+        }
+
         function scanImage() {
             const fileInput = document.createElement('input');
             fileInput.type = 'file'; fileInput.accept = 'image/*'; fileInput.capture = 'environment'; 
@@ -246,13 +242,17 @@
                 const menuArea = document.getElementById('main-menu');
                 menuArea.innerHTML = '<div style="text-align:center; padding: 50px; color: var(--gold); font-size: 18px;">⏳ Analyzing...</div>';
                 const resultText = await analyzeImage(file);
-                menuArea.innerHTML = `<div style="background: rgba(212,175,55,0.1); border:1px solid var(--gold); padding: 15px; border-radius:10px; color: #fff; font-size: 13px; line-height: 1.6; text-align: right;">${resultText}</div>
-                <button class="gold-btn" onclick="location.reload()" style="margin-top:20px;">🔄 Scan Another</button>`;
+                // تخزين النص في متغير عام لاستخدامه في زر الاستماع
+                window.lastAnalysisText = resultText;
+                menuArea.innerHTML = `
+                    <div style="background: rgba(212,175,55,0.1); border:1px solid var(--gold); padding: 15px; border-radius:10px; color: #fff; font-size: 13px; line-height: 1.6; text-align: right;">${resultText}</div>
+                    <button class="gold-btn" onclick="speakText(window.lastAnalysisText)" style="margin-top:15px; background: var(--cyan-glow); color:#000;">🔊 استمع للرد</button>
+                    <button class="gold-btn" onclick="location.reload()" style="margin-top:10px;">🔄 Scan Another</button>
+                `;
             };
             fileInput.click();
         }
 
-        // ==================== 2. نظام الأدوية وقاعدة الحديد ====================
         function openMedsScreen() { document.getElementById('meds-screen').style.display = 'flex'; }
         function closeMedsScreen() { document.getElementById('meds-screen').style.display = 'none'; }
 
@@ -289,7 +289,6 @@
             alert("✅ Medication recorded.");
         }
 
-        // ==================== 3. التوأم الرقمي 3D ====================
         function openHoloScreen() { document.getElementById('holo-screen').style.display = 'flex'; initHoloMed(); }
         function closeHoloScreen() { document.getElementById('holo-screen').style.display = 'none'; cancelAnimationFrame(animationId); document.getElementById('webgl-container').innerHTML = ''; }
         
@@ -342,7 +341,6 @@
             animate();
         }
 
-        // ==================== 4. النبض الصدري (Chest Vitals) ====================
         let audioContext, analyser, dataArray, isListening = false;
         
         function openChestVitals() { document.getElementById('chest-screen').style.display = 'flex'; }
