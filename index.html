@@ -199,8 +199,10 @@
     </div>
 
     <script>
-        // ⚠️ ضع مفتاح API الجديد هنا (الذي ينتهي بـ Fh4Q) ⚠️
-        const API_KEY = "ضع_المفتاح_الجديد_هنا"; 
+        // ==================== 1. كود الماسح الذكي (Gemini AI) ====================
+        
+        // ⚠️ امسح كلمة HERE وضع المفتاح الجديد مكانها ⚠️
+        const API_KEY = "AQ.Ab8RN6J2kiBS3F_WgnEMZhcNxroDr5Ir9jYeOUdivw651W_Pyw"; 
         
         async function analyzeImage(file) {
             const reader = new FileReader();
@@ -220,14 +222,13 @@
             });
         }
 
-        // دالة قراءة النص بصوت مسموع
         function speakText(text) {
             if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel(); // إيقاف أي قراءة سابقة
+                window.speechSynthesis.cancel();
                 const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'ar-SA'; // اللغة العربية
-                utterance.rate = 0.9; // سرعة القراءة
-                utterance.pitch = 1; // نبرة الصوت
+                utterance.lang = 'ar-SA';
+                utterance.rate = 0.9;
+                utterance.pitch = 1;
                 window.speechSynthesis.speak(utterance);
             } else {
                 alert("متصفحك لا يدعم خاصية القراءة الصوتية.");
@@ -242,7 +243,6 @@
                 const menuArea = document.getElementById('main-menu');
                 menuArea.innerHTML = '<div style="text-align:center; padding: 50px; color: var(--gold); font-size: 18px;">⏳ Analyzing...</div>';
                 const resultText = await analyzeImage(file);
-                // تخزين النص في متغير عام لاستخدامه في زر الاستماع
                 window.lastAnalysisText = resultText;
                 menuArea.innerHTML = `
                     <div style="background: rgba(212,175,55,0.1); border:1px solid var(--gold); padding: 15px; border-radius:10px; color: #fff; font-size: 13px; line-height: 1.6; text-align: right;">${resultText}</div>
@@ -253,6 +253,7 @@
             fileInput.click();
         }
 
+        // ==================== 2. نظام الأدوية وقاعدة الحديد ====================
         function openMedsScreen() { document.getElementById('meds-screen').style.display = 'flex'; }
         function closeMedsScreen() { document.getElementById('meds-screen').style.display = 'none'; }
 
@@ -289,6 +290,7 @@
             alert("✅ Medication recorded.");
         }
 
+        // ==================== 3. التوأم الرقمي 3D ====================
         function openHoloScreen() { document.getElementById('holo-screen').style.display = 'flex'; initHoloMed(); }
         function closeHoloScreen() { document.getElementById('holo-screen').style.display = 'none'; cancelAnimationFrame(animationId); document.getElementById('webgl-container').innerHTML = ''; }
         
@@ -341,6 +343,7 @@
             animate();
         }
 
+        // ==================== 4. النبض الصدري (Chest Vitals) ====================
         let audioContext, analyser, dataArray, isListening = false;
         
         function openChestVitals() { document.getElementById('chest-screen').style.display = 'flex'; }
