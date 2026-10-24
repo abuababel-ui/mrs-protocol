@@ -215,8 +215,9 @@
 
     <script>
         // ==================== 1. كود الماسح الذكي (Gemini AI) ====================
-        // تم وضع المفتاح الذي أرسلته هنا:
-        const API_KEY = "AQ.Ab8RN6KqndQjZBzqOpFIdt1icHfLT1IQ07NFsIhkqTLKA3Fh4Q";
+        
+        // ⚠️ ضع مفتاح API الجديد هنا (المفتاح الذي ينتهي بـ Fh4Q) ⚠️
+        const API_KEY = "ضع_المفتاح_الجديد_هنا"; 
         
         async function analyzeImage(file) {
             const reader = new FileReader();
@@ -226,7 +227,8 @@
                     const promptText = `أنت العقل المدبر لبروتوكول MRS. حلل هذه الصورة الطبية بدقة. رد بالعربية بأسلوب بشري مطمئن وقصير.`;
                     const payload = { contents: [{ parts: [{ text: promptText }, { inline_data: { mime_type: file.type, data: base64String } }] }] };
                     try {
-                        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${API_KEY}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                        // تم تعديل اسم الموديل ليكون gemini-1.5-flash
+                        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
                         const data = await res.json();
                         if(data.candidates && data.candidates[0].content) resolve(data.candidates[0].content.parts[0].text);
                         else resolve("❌ الخوادم مزدحمة، حاول لاحقاً.");
