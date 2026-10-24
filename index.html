@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>MRS Protocol - Imperial Edition</title>
     
-    <link rel="manifest" href='data:application/manifest+json,{"name": "MRS Protocol","short_name": "MRS","start_url": ".","display": "standalone","background_color": "#030712","theme_color": "#d4af37","icons": [{"src": "https://i.postimg.cc/YCJyR3mS/Cut-Paste-2026-10-23-12-58-31-298.png","sizes": "192x192 512x512","type": "image/png"}]}'>
+    <link rel="manifest" href='data:application/manifest+json,{"name": "MRS Protocol","short_name": "MRS","description": "Medical Reality Simulation Protocol - Imperial Edition","start_url": ".","display": "standalone","background_color": "#030712","theme_color": "#d4af37","icons": [{"src": "https://i.postimg.cc/YCJyR3mS/Cut-Paste-2026-10-23-12-58-31-298.png","sizes": "192x192 512x512","type": "image/png"}]}'>
     <link rel="apple-touch-icon" href="https://i.postimg.cc/YCJyR3mS/Cut-Paste-2026-10-23-12-58-31-298.png">
 
     <style>
@@ -199,8 +199,6 @@
     </div>
 
     <script>
-        // ==================== 1. كود الماسح الذكي (Gemini AI) ====================
-        
         // ⚠️ امسح كلمة HERE وضع المفتاح الجديد مكانها ⚠️
         const API_KEY = "AQ.Ab8RN6Jm2FmXfq2YR4kvPObKR-8H7Cw76AgZZ2YThTuNuXXiJg"; 
         
@@ -253,7 +251,6 @@
             fileInput.click();
         }
 
-        // ==================== 2. نظام الأدوية وقاعدة الحديد ====================
         function openMedsScreen() { document.getElementById('meds-screen').style.display = 'flex'; }
         function closeMedsScreen() { document.getElementById('meds-screen').style.display = 'none'; }
 
@@ -290,7 +287,6 @@
             alert("✅ Medication recorded.");
         }
 
-        // ==================== 3. التوأم الرقمي 3D ====================
         function openHoloScreen() { document.getElementById('holo-screen').style.display = 'flex'; initHoloMed(); }
         function closeHoloScreen() { document.getElementById('holo-screen').style.display = 'none'; cancelAnimationFrame(animationId); document.getElementById('webgl-container').innerHTML = ''; }
         
@@ -343,7 +339,6 @@
             animate();
         }
 
-        // ==================== 4. النبض الصدري (Chest Vitals) ====================
         let audioContext, analyser, dataArray, isListening = false;
         
         function openChestVitals() { document.getElementById('chest-screen').style.display = 'flex'; }
